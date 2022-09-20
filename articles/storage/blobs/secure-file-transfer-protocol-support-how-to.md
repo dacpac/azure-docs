@@ -247,8 +247,15 @@ You can use any SFTP client to securely connect and then transfer files. The fol
 > [!div class="mx-imgBorder"]
 > ![Connect with Open SSH](./media/secure-file-transfer-protocol-support-how-to/ssh-connect-and-transfer.png)
 
+The following example connects to the account by using the private key of an SSH key pair. 
+
+```powershell
+sftp -i "~/.ssh/privateKeyName" contoso4.contosouser@contoso4.blob.core.windows.net
+put logfile.txt
+```
+
 > [!NOTE]
-> The SFTP username is `storage_account_name`.`username`.  In the example above the `storage_account_name` is "contoso4" and the `username` is "contosouser."  The combined username becomes `contoso4.contosouser` for the SFTP command.
+> The SFTP username is `storage_account_name`.`username`.  In the examples above, the `storage_account_name` is "contoso4" and the `username` is "contosouser."  The combined username becomes `contoso4.contosouser` for the SFTP command.
 
 > [!NOTE]
 > You might be prompted to trust a host key. During the public preview, valid host keys are published [here](secure-file-transfer-protocol-host-keys.md).  
